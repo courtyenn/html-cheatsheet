@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HTML5 Cheatsheet</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            *{
+                font-family: sans-serif;
+            }
+            table {
+                margin-top: 20px;
+                table-layout: fixed;
+                width: 200px;
+            }
+            table tr:nth-child(even) {
+                background: #cccccc;
+            }
+            td{
+                padding: 10px;
+            }
+            th, td {
+                width: 200px;
+            }
+            tbody > tr:first-child > td:before {
+                content: attr(data-header);
+                position: fixed;
+                display: block;
+                top: 0;
+                width: inherit;
+                background: white;
+                border-bottom: 1px solid black;
+                z-index: 99999999;
+                font-size: 15px;
+                margin-left: -10px;
+            }
+
+        </style>
+    </head>
+    <body>
+<table>
+  <thead>
+    <tr>
+      <th><span>Tag</span></th>
+      <th><span>Description</span></th>
+      <th><span>Content Category</span></th>
+      <th><span>Permitted content</span></th>
+      <th><span>Tag omission</span></th>
+      <th><span>ARIA Roles</span></th>
+      <th><span>Previous Sibling</span></th>
+      <th><span>Permitted Parents</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-header="Tag"><code class="highlighter-rouge">&lt;figure&gt;</code></td>
+      <td data-header="Description">represents self-contained content, frequently with a caption (<code class="highlighter-rouge">&lt;figcaption&gt;</code>), and is typically referenced as a single unit.</td>
+      <td data-header="Content Category">Flow content, sectioning root, palpable content</td>
+      <td data-header="Permitted Content">A <code class="highlighter-rouge">&lt;figcaption&gt;</code> element, followed by flow content; or flow content followed by a <code class="highlighter-rouge">&lt;figcaption&gt;</code> element; or flow content.</td>
+      <td data-header="Tag Omission">None, both the starting and ending tag are mandatory.</td>
+      <td data-header="ARIA roles">group, presentation</td>
+      <td data-header="Previous Sibling">N/A</td>
+      <td data-header="Permitted Parents">N/A</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;figcaption&gt;</code></td>
+      <td>represents a caption or a legend associated with a figure or an illustration described by the rest of the data of the <code class="highlighter-rouge">&lt;figure&gt;</code> element which is its immediate ancestor.</td>
+      <td>None.</td>
+      <td>Flow content.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>group, presentation</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;dl&gt;</code></td>
+      <td>represents a description list. The element encloses a list of groups of terms and descriptions. Common uses for this element are to implement a glossary or to display metadata (a list of key-value pairs).</td>
+      <td>Flow content, and if the <code class="highlighter-rouge">&lt;dl&gt;</code> element’s children include one name-value group, palpable content.</td>
+      <td>Zero or more groups each consisting of one or more <code class="highlighter-rouge">&lt;dt&gt;</code> elements followed by one or more <code class="highlighter-rouge">&lt;dd&gt;</code> elements, optionally intermixed with <code class="highlighter-rouge">&lt;script&gt;</code> and <code class="highlighter-rouge">&lt;template&gt;</code> elements.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>group, presentation</td>
+      <td>N/A</td>
+      <td>Any element that accepts flow content.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;dd&gt;</code></td>
+      <td>indicates the description of a term in a description list (<code class="highlighter-rouge">&lt;dl&gt;</code>).</td>
+      <td>Flow content, and if the <code class="highlighter-rouge">&lt;dl&gt;</code> element’s children include one name-value group, palpable content.</td>
+      <td>None.</td>
+      <td>The start tag is required. The end tag may be omitted if the <code class="highlighter-rouge">&lt;dd&gt;</code> element is immediately followed by another <code class="highlighter-rouge">&lt;dd&gt;</code> element, or if there is no more content in the parent element.</td>
+      <td>None</td>
+      <td><code class="highlighter-rouge">&lt;dt&gt;</code>, <code class="highlighter-rouge">&lt;dd&gt;</code></td>
+      <td><code class="highlighter-rouge">&lt;dl&gt;</code> or (in WHATWG HTML) a <code class="highlighter-rouge">&lt;div&gt;</code> that is inside a <code class="highlighter-rouge">&lt;dl&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;dt&gt;</code></td>
+      <td>identifies a term in a description list. This element can occur only as a child element of a <code class="highlighter-rouge">&lt;dl&gt;</code>. It is usually followed by a <code class="highlighter-rouge">&lt;dd&gt;</code> element; however, multiple <code class="highlighter-rouge">&lt;dt&gt;</code> elements in a row indicate several terms that are all defined by the immediate next <code class="highlighter-rouge">&lt;dd&gt;</code> element.</td>
+      <td>None.</td>
+      <td>Flow content, but with no <code class="highlighter-rouge">&lt;header&gt;</code>, <code class="highlighter-rouge">&lt;footer&gt;</code>, sectioning content or heading content descendants.</td>
+      <td>Must have a start tag. The end tag may be omitted if this element is immediately followed by another <code class="highlighter-rouge">&lt;dd&gt;</code> element, or if there is no more content in the parent element.</td>
+      <td>None</td>
+      <td>N/A</td>
+      <td>Before a <code class="highlighter-rouge">&lt;dt&gt;</code> or a <code class="highlighter-rouge">&lt;dd&gt;</code> element, inside a <code class="highlighter-rouge">&lt;dl&gt;</code> or (in WHATWG HTML) a <code class="highlighter-rouge">&lt;div&gt;</code> that is inside a <code class="highlighter-rouge">&lt;dl&gt;</code>.</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;main&gt;</code></td>
+      <td>represents the main content of  the <code class="highlighter-rouge">&lt;body&gt;</code> of a document or application. The main content area consists of content that is directly related to, or expands upon the central topic of a document or the central functionality of an application.</td>
+      <td>Flow content, palpable content.</td>
+      <td>Flow content.</td>
+      <td>None; both the starting and ending tags are mandatory.</td>
+      <td>N/A</td>
+      <td>Any element that accepts flow content other than <code class="highlighter-rouge">&lt;article&gt;</code>, <code class="highlighter-rouge">&lt;aside&gt;</code>, <code class="highlighter-rouge">&lt;footer&gt;</code>, <code class="highlighter-rouge">&lt;header&gt;</code> or <code class="highlighter-rouge">&lt;nav&gt;</code>.</td>
+      
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;pre&gt;</code></td>
+      <td>represents preformatted text. Text within this element is typically displayed in a non-proportional (“monospace”) font exactly as it is laid out in the file. Whitespace inside this element is displayed as typed.</td>
+      <td>Flow content, palpable content.</td>
+      <td>Phrasing content.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>Any</td>
+      <td>N/A</td>
+      <td>Any element that accepts flow content.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;template&gt;</code></td>
+      <td>mechanism for holding client-side content that is not to be rendered when a page is loaded but may subsequently be instantiated during runtime using JavaScript.</td>
+      <td>Metadata content, flow content, phrasing content, script-supporting element</td>
+      <td>Metadata content, flow content, any valid HTML content that is permitted to occur within the <code class="highlighter-rouge">&lt;ol&gt;</code>, <code class="highlighter-rouge">&lt;dl&gt;</code>, <code class="highlighter-rouge">&lt;figure&gt;</code>, <code class="highlighter-rouge">&lt;ruby&gt;</code>, <code class="highlighter-rouge">&lt;object&gt;</code>, <code class="highlighter-rouge">&lt;video&gt;</code>, <code class="highlighter-rouge">&lt;audio&gt;</code>, <code class="highlighter-rouge">&lt;table&gt;</code>, <code class="highlighter-rouge">&lt;colgroup&gt;</code>, <code class="highlighter-rouge">&lt;thead&gt;</code>, <code class="highlighter-rouge">&lt;tbody&gt;</code>, <code class="highlighter-rouge">&lt;tfoot&gt;</code>, <code class="highlighter-rouge">&lt;tr&gt;</code>, <code class="highlighter-rouge">&lt;fieldset&gt;</code>, <code class="highlighter-rouge">&lt;select&gt;</code>, <code class="highlighter-rouge">&lt;details&gt;</code> elements and <code class="highlighter-rouge">&lt;menu&gt;</code> whose type attribute is in popup menu state.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>None</td>
+      <td>N/A</td>
+      <td><code class="highlighter-rouge">&lt;body&gt;</code>, <code class="highlighter-rouge">&lt;frameset&gt;</code>, <code class="highlighter-rouge">&lt;head&gt;</code>, <code class="highlighter-rouge">&lt;dl&gt;</code> and <code class="highlighter-rouge">&lt;colgroup&gt;</code> without a span attribute</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;abbr&gt;</code></td>
+      <td>element represents an abbreviation and optionally provides a full description for it. If present, the title attribute must contain this full description and nothing else.</td>
+      <td>Flow content, phrasing content, palpable content</td>
+      <td>Phrasing content</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>Any element that accepts phrasing content</td>
+      
+      
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;footer&gt;</code></td>
+      <td>element represents a footer for its nearest sectioning content or sectioning root element. A footer typically contains information about the author of the section, copyright data or links to related documents.</td>
+      <td>Flow content, palpable content.</td>
+      <td>Flow content, but with no <code class="highlighter-rouge">&lt;footer&gt;</code> or <code class="highlighter-rouge">&lt;header&gt;</code> descendants.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>group, presentation</td>
+      <td>N/A</td>
+      <td>Any element that accepts flow content. Note that a <code class="highlighter-rouge">&lt;footer&gt;</code> element must not be a descendant of an <code class="highlighter-rouge">&lt;address&gt;</code>, <code class="highlighter-rouge">&lt;header&gt;</code> or another <code class="highlighter-rouge">&lt;footer&gt;</code> element.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;time&gt;</code></td>
+      <td>element represents either a time on a 24-hour clock or a precise date in the Gregorian calendar (with optional time and timezone information).</td>
+      <td>Flow content, phrasing content, palpable content.</td>
+      <td>Phrasing content.</td>
+      <td>None; both the starting and ending tags are mandatory.</td>
+      <td>Any</td>
+      <td>N/A</td>
+      <td>Any element that accepts phrasing content.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;small&gt;</code></td>
+      <td>element makes the text font size one size smaller (for example, from large to medium, or from small to x-small) down to the browser’s minimum font size.  In HTML5, this element is repurposed to represent side-comments and small print, including copyright and legal text, independent of its styled presentation.</td>
+      <td>Flow content, phrasing content</td>
+      <td>Phrasing content</td>
+      <td>None, must have both a start tag and an end tag.</td>
+      <td>Any</td>
+      <td>N/A</td>
+      <td>Any element that accepts phrasing content, or any element that accepts flow content.</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;em&gt;</code></td>
+      <td>element marks text that has stress emphasis. The <code class="highlighter-rouge">&lt;em&gt;</code> element can be nested, with each level of nesting indicating a greater degree of emphasis.</td>
+      <td>Flow content, phrasing content, palpable content</td>
+      <td>Phrasing content.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>Any</td>
+      <td>N/A</td>
+      <td>Any element that accepts phrasing content.</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;mark&gt;</code></td>
+      <td>element represents highlighted text, i.e., a run of text marked for reference purpose, due to its relevance in a particular context. For example it can be used in a page showing search results to highlight every instance of the searched-for word.</td>
+      <td>Flow content, phrasing content, palpable content.</td>
+      <td>Phrasing content.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>Any</td>
+      <td>N/A</td>
+      <td>Any element that accepts phrasing content.</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;code&gt;</code></td>
+      <td>element represents a fragment of computer code. By default, it is displayed in the browser’s default monospace font.</td>
+      <td>Flow content, phrasing content, palpable content.</td>
+      <td>Phrasing content.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>Any</td>
+      <td>N/A</td>
+      <td>Any element that accepts phrasing content.</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;cite&gt;</code></td>
+      <td>element represents a reference to a creative work. It must include the title of a work or a URL reference, which may be in an abbreviated form according to the conventions used for the addition of citation metadata.</td>
+      <td>Flow content, phrasing content, palpable content.</td>
+      <td>Phrasing content.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>Any</td>
+      <td>N/A</td>
+      <td>Any element that accepts phrasing content.</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;address&gt;</code></td>
+      <td>element supplies contact information for its nearest <code class="highlighter-rouge">&lt;article&gt;</code> or <code class="highlighter-rouge">&lt;body&gt;</code> ancestor; in the latter case, it applies to the whole document.</td>
+      <td>Flow content, palpable content.</td>
+      <td>Flow content, but with no nested <code class="highlighter-rouge">&lt;address&gt;</code> element, no heading content, no sectioning content, and no <code class="highlighter-rouge">&lt;header&gt;</code> or <code class="highlighter-rouge">&lt;footer&gt;</code> element.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>None</td>
+      <td>N/A</td>
+      <td>Any element that accepts flow content</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;aside&gt;</code></td>
+      <td>element represents a section of a document with content connected tangentially to the main content of the document (often presented as a sidebar).</td>
+      <td>Flow content, sectioning content, palpable content.</td>
+      <td>Flow content.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>feed, note, presentation, region, search</td>
+      <td>N/A</td>
+      <td>Any element that accepts flow content.</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;article&gt;</code></td>
+      <td>element represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable (e.g., in syndication). Examples include: a forum post, a magazine or newspaper article, or a blog entry.</td>
+      <td>Flow content, sectioning content, palpable content.</td>
+      <td>Flow content.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>application, document, feed, main, presentation, region</td>
+      <td>N/A</td>
+      <td>Any element that accepts flow content.</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;section&gt;</code></td>
+      <td>element represents a generic section of a document, i.e., a thematic grouping of content, typically with a heading.</td>
+      <td>Flow content, Sectioning content, palpable content.</td>
+      <td>Flow content.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>alert, alertdialog, application, banner, complementary, contentinfo, dialog, document, feed, log, main, marquee, navigation, search, status, tabpanel</td>
+      <td>N/A</td>
+      <td>Any element that accepts flow content.</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;header&gt;</code></td>
+      <td>element represents a group of introductory or navigational aids. It may contain some heading elements but also other elements like a logo, a search form, and so on.</td>
+      <td>Flow content, palpable content.</td>
+      <td>Flow content, but with no <code class="highlighter-rouge">&lt;header&gt;</code> or <code class="highlighter-rouge">&lt;footer&gt;</code> descendant.</td>
+      <td>None, both the starting and ending tag are mandatory.</td>
+      <td>group, presentation</td>
+      <td>N/A</td>
+      <td>Any element that accepts flow content. Note that a <code class="highlighter-rouge">&lt;header&gt;</code> element must not be a descendant of an <code class="highlighter-rouge">&lt;address&gt;</code>, <code class="highlighter-rouge">&lt;footer&gt;</code> or another <code class="highlighter-rouge">&lt;header&gt;</code> element.</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;colgroup&gt;</code></td>
+      <td>element defines a group of columns within a table.</td>
+      <td>None.</td>
+      <td>If the span attribute is present: none, it is an empty element.</td>
+      <td>If the attribute is not present: zero or more <code class="highlighter-rouge">&lt;col&gt;</code> element</td>
+      <td>The start tag may be omitted, if it has a <code class="highlighter-rouge">&lt;col&gt;</code> element as its first child and if it is not preceded by a <code class="highlighter-rouge">&lt;colgroup&gt;</code> whose end tag has been omitted. The end tag may be omitted, if it is not followed by a space or a comment.</td>
+      <td>None</td>
+      <td>N/A</td>
+      <td>A <code class="highlighter-rouge">&lt;table&gt;</code> element. The <code class="highlighter-rouge">&lt;colgroup&gt;</code> must appear after any optional <code class="highlighter-rouge">&lt;caption&gt;</code> element but before any <code class="highlighter-rouge">&lt;thead&gt;</code>, <code class="highlighter-rouge">&lt;th&gt;</code>, <code class="highlighter-rouge">&lt;tbody&gt;</code>, <code class="highlighter-rouge">&lt;tfoot&gt;</code> and <code class="highlighter-rouge">&lt;tr&gt;</code> element.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;col&gt;</code></td>
+      <td>element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a <code class="highlighter-rouge">&lt;colgroup&gt;</code> element.</td>
+      <td>None.</td>
+      <td>None, it is an empty element.</td>
+      <td>The start tag is mandatory, but, as it is a void element, the use of an end tag is forbidden.</td>
+      <td>None</td>
+      <td>N/A</td>
+      <td><code class="highlighter-rouge">&lt;colgroup&gt;</code> only, though it can be implicitly defined as its start tag is not mandatory. The <code class="highlighter-rouge">&lt;colgroup&gt;</code> must not have a span attribute.</td>
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;tfoot&gt;</code></td>
+      <td>element defines a set of rows summarizing the columns of the table.</td>
+      <td>Zero or more <code class="highlighter-rouge">&lt;tr&gt;</code> elements.</td>
+      <td>The start tag is mandatory. The end tag may be omitted if  there is no more content in the parent <code class="highlighter-rouge">&lt;table&gt;</code> element.</td>
+      <td>Any</td>
+      <td>N/A</td>
+      <td>A <code class="highlighter-rouge">&lt;table&gt;</code> element. The <code class="highlighter-rouge">&lt;tfoot&gt;</code> must appear after any <code class="highlighter-rouge">&lt;caption&gt;</code>, <code class="highlighter-rouge">&lt;colgroup&gt;</code>, <code class="highlighter-rouge">&lt;thead&gt;</code>, <code class="highlighter-rouge">&lt;tbody&gt;</code>, or <code class="highlighter-rouge">&lt;tr&gt;</code> element.  Note that this is the requirement as of HTML5.</td>
+      
+      
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;thead&gt;</code></td>
+      <td>element defines a set of rows defining the head of the columns of the table.</td>
+      
+      
+      
+      
+      
+      
+      
+    </tr>
+  </tbody>
+</table>
+    </body>
+</html>
