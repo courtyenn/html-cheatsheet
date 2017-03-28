@@ -26,6 +26,8 @@ Designed to give beginners and advanced learners a quick reference to semantic H
 | `<article>` | element represents a self-contained composition in a document, page, application, or site, which is intended to be independently distributable or reusable (e.g., in syndication). Examples include: a forum post, a magazine or newspaper article, or a blog entry. |
 | `<section>` |  element represents a generic section of a document, i.e., a thematic grouping of content, typically with a heading. |
 | `<header>` | element represents a group of introductory or navigational aids. It may contain some heading elements but also other elements like a logo, a search form, and so on. |
-
-
+| `<colgroup>` | element defines a group of columns within a table. |
+| `<col>` | element defines a column within a table and is used for defining common semantics on all common cells. It is generally found within a `<colgroup>` element. |
+| `<tfoot>` | element defines a set of rows summarizing the columns of the table. |
+| `<thead>` | element defines a set of rows defining the head of the columns of the table. | 
 
